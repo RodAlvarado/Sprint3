@@ -1,0 +1,31 @@
+import requests
+from bs4 import BeautifulSoup
+from requests_html import HTMLSession
+
+url = "https://es.finance.yahoo.com/quote/TEF/history?p=TEF&.tsrc=fin-srch"
+
+s = HTMLSession()
+response = s.get(url)
+
+soup = BeautifulSoup(response.content, "html.parser")
+t_row = soup.find_all("tr", class_="BdT")
+
+fechas = []
+aperturas = []
+maximos = []
+minimos = []
+cierres = []
+cierres_ajus = []
+volumen = []
+
+print(t_row)
+
+for t_row in t_rows
+fechas. append (t_row. find all ("tr") [0].get text ())
+aperturas. append (t_row. find all ("tr") [1].get text ())
+maximos. append (t_row. find all ("tr") [2].get text ())
+minimos. append (t_row. find all ("tr") [3].get text ())
+cierres. append (t_row. find all ("tr") [4].get text ())
+cierres_ajus. append (t_row. find all ("tr") [5].get text ())
+volumen. append (t_row. find all ("tr") [6].get text ())
+print(t_rows)
